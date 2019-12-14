@@ -40,7 +40,7 @@ class DatabaseHelper {
   void createDb(Database db, int newVersion) async {
     await db.execute(
         'CREATE TABLE $noteTable($colId INTEGER PRIMARY KEY AUTOINCREMENT,'
-        '$colTitle TEXT,$colDescription Text, $colPriority INTEGER, $colDate TEXT');
+        '$colTitle TEXT,$colDescription Text, $colPriority INTEGER, $colDate TEXT)');
   }
 
   Future<Database> get database async {

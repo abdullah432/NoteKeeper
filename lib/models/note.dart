@@ -9,7 +9,7 @@ class Note {
   Note.withID(this._title, this._priority, this._date, [this._description]);
 
   int get id => this._id;
-  String get title => this.title;
+  String get title => this._title;
   String get description => this._description;
   int get priority => this._priority;
   String get date => this._date;
@@ -23,7 +23,7 @@ class Note {
   }
 
   set priority(int newPriority) {
-    if (newPriority >= 1 && newPriority <= 0) this._priority = newPriority;
+    if (newPriority >= 1 && newPriority <= 2) this._priority = newPriority;
   }
 
   set date(String newDate){
