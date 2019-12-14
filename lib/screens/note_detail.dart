@@ -32,12 +32,10 @@ class NoteDetailState extends State<NoteDetail> {
   // }
   @override
   Widget build(BuildContext context) {
-    TextStyle textStyle = Theme.of(context).textTheme.subtitle;
+    TextStyle textStyle = Theme.of(context).textTheme.title;
 
     titleController.text = this.note.title;
     descriptionController.text = this.note.description;
-
-    debugPrint(note.toString());
 
     return WillPopScope(
         onWillPop: () {
@@ -74,7 +72,7 @@ class NoteDetailState extends State<NoteDetail> {
                 ),
                 Padding(
                     padding: EdgeInsets.only(
-                        top: minimumPadding, bottom: minimumPadding),
+                        top: minimumPadding * 3, bottom: minimumPadding) * 2,
                     child: TextFormField(
                       controller: titleController,
                       onChanged: (value) {
@@ -90,7 +88,7 @@ class NoteDetailState extends State<NoteDetail> {
                     )),
                 Padding(
                     padding: EdgeInsets.only(
-                        top: minimumPadding, bottom: minimumPadding),
+                        top: minimumPadding * 3, bottom: minimumPadding * 5),
                     child: TextField(
                       controller: descriptionController,
                       onChanged: (value) {
@@ -110,7 +108,7 @@ class NoteDetailState extends State<NoteDetail> {
                       child: RaisedButton(
                         color: Theme.of(context).primaryColorDark,
                         textColor: Theme.of(context).primaryColorLight,
-                        child: Text('SAVE'),
+                        child: Text('SAVE', style: TextStyle(fontSize: 16)),
                         onPressed: () {
                           saveButton();
                         },
@@ -121,7 +119,7 @@ class NoteDetailState extends State<NoteDetail> {
                       child: RaisedButton(
                         color: Theme.of(context).primaryColorDark,
                         textColor: Theme.of(context).primaryColorLight,
-                        child: Text('DELETE'),
+                        child: Text('DELETE', style: TextStyle(fontSize: 16)),
                         onPressed: () {
                           deleteButton();
                         },
