@@ -54,4 +54,6 @@ class Note {
     _date = map['date'];
     _description = map['description'];
   }
+
+  
 }
