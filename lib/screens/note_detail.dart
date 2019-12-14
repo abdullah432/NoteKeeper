@@ -142,8 +142,6 @@ class NoteDetailState extends State<NoteDetail> {
         selectedValue = dropDown[1];
         return selectedValue;
         break;
-      default:
-        return 'Low';
     }
   }
 
